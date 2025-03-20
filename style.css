@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+.head {
+    background-color: darkblue;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    position: relative;
+}
+
+button {
+    position: relative;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+img{
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+img:hover{
+    transform: scale(1.05); 
+    opacity: 0.7;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: rgb(236, 158, 14);
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+button:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.categorias-container {
+    position: relative;
+    display: inline-block;
+}
+
+.katigoriya {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    color: blue;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    min-width: 120px;
+}
+
+.katigoriya p {
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.katigoriya p:hover {
+    background: white;
+    color: orange;
+}
+
+.categorias-container:hover .katigoriya {
+    display: block;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.Nature, .cityscape, .wildlife, .mountain {
+    width: 300px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    line-height: 30px;
+    box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.2);
+    padding-bottom: 40px;
+}
+
+.Nature img, .cityscape img, .wildlife img, .mountain img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.actions i {
+    cursor: pointer;
+    font-size: 18px;
+    color: orange;
+}
+
+.actions i:hover {
+    transform: scale(1.2);
+    color: red;
+}
+
+@media(max-width: 600px) {
+    .head {
+        width: 100%;
+        height: 40px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .all {
+        flex-grow: 1;
+    }
+    footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        position: relative;
+        width: 100%;
+        bottom: 0;
+    }
+    @media(max-width: 646px){
+        footer{
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
